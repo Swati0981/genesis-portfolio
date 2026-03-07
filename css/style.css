@@ -187,3 +187,67 @@ h1 {
 @media (max-width: 600px) {
     .grid { column-count: 1; }
     .services-
+
+    /* --- Project Page Layout (New) --- */
+.project-header {
+    display: flex;
+    justify-content: space-between;
+    padding: 5% 5% 2% 5%;
+    gap: 4rem;
+}
+
+.project-title-area {
+    flex: 2;
+}
+
+.project-title-area h1 {
+    font-size: 3.5rem;
+    margin-bottom: 2rem;
+}
+
+/* Metadata Table styling to match Figma */
+.project-meta {
+    flex: 1;
+    border-top: 1px solid var(--border-color);
+}
+
+.meta-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 0;
+    border-bottom: 1px solid var(--border-color);
+    font-size: 0.9rem;
+}
+
+.meta-label {
+    color: var(--text-muted);
+}
+
+.meta-value {
+    font-weight: 700;
+    text-align: right;
+}
+
+/* Center Text Blocks */
+.project-description {
+    max-width: 800px;
+    margin: 4rem auto;
+    padding: 0 5%;
+    color: var(--text-muted);
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+
+/* Large Project Images */
+.main-project-img {
+    width: 90%;
+    margin: 0 5%;
+    display: block;
+}
+
+.project-gallery-trio {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    padding: 4rem 5%;
+}
