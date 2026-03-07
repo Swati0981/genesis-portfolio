@@ -5,71 +5,185 @@
     --border-color: #E5E5E5;
 }
 
+* {
+    box-sizing: border-box;
+}
+
 body {
     font-family: 'Inter', sans-serif;
     color: var(--text-main);
     margin: 0;
     padding: 0;
+    line-height: 1.5;
 }
 
-/* Navigation */
-nav, footer {
+/* --- Header & Navigation --- */
+.header {
     display: flex;
     justify-content: space-between;
-    padding: 2rem 5%;
     align-items: center;
+    padding: 2rem 5%;
 }
 
-.logo { font-weight: 800; font-size: 1.2rem; }
+.logo { 
+    font-weight: 800; 
+    font-size: 1.4rem;
+    text-transform: uppercase;
+    letter-spacing: -0.5px;
+}
 
-/* Masonry Grid */
-.masonry-grid {
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: var(--text-main);
+    font-weight: 600;
+}
+
+/* --- Hero Section --- */
+.intro {
+    padding: 8% 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.intro-content { max-width: 700px; }
+
+.small-tag {
+    color: var(--primary-blue);
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    margin-bottom: 1rem;
+}
+
+h1 {
+    font-size: 3rem;
+    font-weight: 800;
+    line-height: 1.1;
+    margin: 0;
+}
+
+.blue { color: var(--primary-blue); }
+
+.side-text {
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+    color: var(--text-muted);
+    font-size: 0.8rem;
+    margin: 0;
+}
+
+/* --- Masonry Gallery --- */
+.gallery { padding: 0 5% 5% 5%; }
+
+.grid {
     column-count: 3;
     column-gap: 1.5rem;
-    padding: 2rem 5%;
 }
 
-.masonry-item {
+.grid-item {
     break-inside: avoid;
     margin-bottom: 1.5rem;
 }
 
-.masonry-item img {
+.grid-item img {
     width: 100%;
-    border-radius: 4px;
     display: block;
+    border-radius: 4px;
 }
 
-/* Awards Table */
-.awards-section { padding: 5% ; }
-.award-row {
-    display: grid;
-    grid-template-columns: 1fr 1fr 2fr 0.5fr;
-    border-top: 1px solid var(--border-color);
-    padding: 2rem 0;
-}
 
-/* Contact Form */
-.contact-container {
+
+/* --- Services --- */
+.services-info {
     display: grid;
     grid-template-columns: 1fr 1fr;
+    padding: 5%;
+    border-top: 1px solid var(--border-color);
+}
+
+.services-text h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    max-width: 400px;
+}
+
+.service-list-columns {
+    display: flex;
     gap: 4rem;
-    padding: 5% 10%;
 }
 
-input, textarea {
-    width: 100%;
-    border: none;
-    border-bottom: 1px solid var(--border-color);
-    padding: 1rem 0;
-    margin-bottom: 2rem;
-    outline: none;
+.service-list-columns ul {
+    list-style: none;
+    padding: 0;
 }
 
-.btn-submit {
-    background: var(--primary-blue);
-    color: white;
-    padding: 1rem 3rem;
-    border: none;
-    cursor: pointer;
+.service-list-columns li {
+    margin-bottom: 0.5rem;
+    font-weight: 500;
 }
+
+/* --- Awards Table --- */
+.awards { padding: 0 5% 5% 5%; }
+
+.award-row {
+    display: grid;
+    grid-template-columns: 1.5fr 1.5fr 3fr 1fr;
+    border-top: 1px solid var(--border-color);
+    padding: 2rem 0;
+    font-size: 0.9rem;
+}
+
+.award-org { font-weight: 700; }
+.award-desc strong { display: block; margin-bottom: 0.2rem; }
+
+/* --- Footer --- */
+.footer {
+    display: flex;
+    justify-content: space-between;
+    padding: 4rem 5%;
+    border-top: 1px solid var(--border-color);
+    align-items: center;
+}
+
+.footer-right {
+    display: flex;
+    gap: 3rem;
+    align-items: center;
+}
+
+.footer-nav {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.footer-nav a {
+    text-decoration: none;
+    color: var(--text-main);
+    font-weight: 600;
+}
+
+.socials {
+    display: flex;
+    gap: 1rem;
+}
+
+/* --- Responsive --- */
+@media (max-width: 900px) {
+    .grid { column-count: 2; }
+    .intro { flex-direction: column; align-items: flex-start; }
+    .side-text { display: none; }
+    .award-row { grid-template-columns: 1fr 1fr; gap: 1rem; }
+}
+
+@media (max-width: 600px) {
+    .grid { column-count: 1; }
+    .services-
